@@ -5,77 +5,70 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Punto 1: Crear ArrayList de números ingresados manualmente hasta ingresar uno negativo
-        ArrayList<Integer> numeros = new ArrayList<>();
-        int numero;
-        System.out.println("Punto 1: Ingrese un número: ENTERO (para continuar) / NEGATIVO (para salir)):");
+        Scanner sc = new Scanner(System.in);
+        int num;
+        int num2;
+        System.out.println("----------------------------------- \n¡Bienvenido al Trabajo Práctico 5!\n-----------------------------------");
+        System.out.println("Grupo: 6 \nIntegrantes: - Miguel Barrera - Emilia Barros -  Federico Frankenberger  - Guadalupe Maricchiolo - \n-----------------------------------");
+        System.out.println("-Ingrese-\n1 / Continuar \n2 / Salir\n-----------------------------------");
         do {
-            System.out.print("Ingrese un número: ");
-            numero = scanner.nextInt();
-            if (numero >= 0) {
-                numeros.add(numero);
+            num = sc.nextInt();
+            switch (num) {
+                case 1:
+                    do {
+                        System.out.println("------------\n EJERCICIOS \n------------");
+                        System.out.println("-Ingrese-\n-- 1 a 6 para ejercicios\n-- 7 para salir");
+                        num2 = sc.nextInt();
+                        switch (num2) {
+                            case 1:
+                                System.out.println("-------------------------------------");
+                                System.out.println("Ejercicio 1:");
+                                Funciones.ejercicio1();
+                                break;
+                            case 2:
+                                System.out.println("-------------------------------------");
+                                System.out.println("Ejercicio 2:");
+                                Funciones.ejercicio2();
+                                break;
+                            case 3:
+                                System.out.println("-------------------------------------");
+                                System.out.println("Ejercicio 3:");
+                                Funciones.ejercicio3();
+                                break;
+                            case 4:
+                                System.out.println("-------------------------------------");
+                                System.out.println("Ejercicio 4:");
+                                break;
+                            case 5:
+                                System.out.println("-------------------------------------");
+                                System.out.println("Ejercicio 5:");
+                                break;
+                            case 6:
+                                System.out.println("-------------------------------------");
+                                System.out.println("Ejercicio 5:");
+                                break;
+                            case 7:
+                                System.out.println("-------------------------------------");
+                                System.out.println("Gracias por su corección!");
+                                System.out.println("-------------------------------------");
+                                num = 2;
+                                break;
+                            default:
+                                System.out.println("--------------------------------------------------");
+                                System.out.println("ERROR - número fuera de rango - vuleva a intentar!");
+                                System.out.println("--------------------------------------------------");
+                        }
+                    } while (num != 2);
+                case 2:
+                    System.out.println("--------");
+                    System.out.println("Gracias!");
+                    System.out.println("--------");
+                    break;
+                default:
+                    System.out.println("- Número fuera de rango - Intente nuevamente -\n1 / Continuar \n2 / Salir");
             }
-        } while (numero >= 0);
-        System.out.println("--------------------");
-        System.out.println("Números ingresados: " + numeros);
-        System.out.println("--------------------");
-
-        // Punto 2: Leer 20 números, determinar mayor, menor y calcular el rango
-        ArrayList<Integer> numeros20 = new ArrayList<>();
-        System.out.println("\nPunto 2: Ingrese 20 números:");
-        for (int i = 0; i < 20; i++) {
-            System.out.print("Número " + (i + 1) + ": ");
-            numeros20.add(scanner.nextInt());
-        }
-
-        int mayor = numeros20.get(0);
-        int menor = numeros20.get(0);
-
-        for (int num : numeros20) {
-            if (num > mayor) {
-                mayor = num;
-            }
-            if (num < menor) {
-                menor = num;
-            }
-        }
-        System.out.println("--------------------");
-        System.out.println("Mayor número: " + mayor);
-        System.out.println("Menor número: " + menor);
-        System.out.println("Rango: " + (mayor - menor));
-        System.out.println("--------------------");
-
-        // Punto 3: Generar 20 números pares aleatorios y calcular estadísticas
-        ArrayList<Integer> numerosAleatorios = new ArrayList<>();
-        Random random = new Random();
-        int suma = 0;
-
-        while (numerosAleatorios.size() < 20) {
-            int num = random.nextInt(50) * 2 + 2; // Números pares entre 2 y 100
-            numerosAleatorios.add(num);
-            suma += num;
-        }
-
-        double promedio = suma / 20.0;
-        int iguales = 0, mayores = 0, menores = 0;
-
-        for (int num : numerosAleatorios) {
-            if (num == promedio) {
-                iguales++;
-            } else if (num > promedio) {
-                mayores++;
-            } else {
-                menores++;
-            }
-        }
-        System.out.println("--------------------");
-        System.out.println("\nPunto 3: Números generados: " + numerosAleatorios);
-        System.out.println("Promedio aritmético: " + promedio);
-        System.out.println("Números iguales al promedio: " + iguales);
-        System.out.println("Números mayores que el promedio: " + mayores);
-        System.out.println("Números menores que el promedio: " + menores);
-        System.out.println("--------------------");
+        } while (num != 2);
     }
 }
+
+
