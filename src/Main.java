@@ -48,7 +48,7 @@ public class Main {
                             case 6:
                                 System.out.println("-------------------------------------");
                                 System.out.println("Ejercicio 6:");
-                                //FALTA HACER!!
+                                Ejercicio6.main(args);
                                 break;
                             case 7:
                                 System.out.println("-------------------------------------");
@@ -73,5 +73,3 @@ public class Main {
         } while (num != 2);
     }
 }
-
-
