@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -78,9 +79,59 @@ public class Funciones {
         System.out.println("Números menores que el promedio: " + menores);
         System.out.println("--------------------");
     }
-
-
-
-
+    public static void ejercicio4(){
+        ArrayList<Integer> ramdom = new ArrayList<>();
+        for(int i=0; i<50;i++){
+            int aletoreo =(int)(Math.random()*100);
+            ramdom.add(aletoreo);
+        }
+        for(Integer num : ramdom){
+            System.out.println(num);
+        }
+        System.out.print("Ingrese un el valor que desea buscar:");
+        Integer nro = scanner.nextInt();
+        boolean respuesta = false;
+        int index = 0;
+        for(Integer n : ramdom){
+                if(n == nro){
+                    System.out.println("Número encontrado en la pos " + index+" !");
+                    respuesta = true;
+                    break;
+                }
+            index++;
+        }
+        if (respuesta == false){
+            System.out.println("El número no se encontro!");
+        }
+    }
+    public static ArrayList<Integer> CargaEjercicio5(){
+        ArrayList<Integer> numerosAleatorios = new ArrayList<>();
+        System.out.println("Ingrese 10 números enteros:");
+        for(int i=0; i<10;i++){
+            System.out.print("Número " +(i+1)+" :");
+            Integer numero = scanner.nextInt();
+            numerosAleatorios.add(numero);
+        }
+        return numerosAleatorios;
+    }
+    public static void CrearArrayEjercicio5(ArrayList<Integer> numeros){
+        ArrayList<Integer> array1 = numeros;
+        ArrayList<Integer> array2 = numeros;
+        Collections.sort(array1);
+        System.out.println("-------------------------------");
+        System.out.println("---Lista ordenada ascendente---");
+        for(Integer num : array1){
+            System.out.print(num+"\t");
+        }
+        System.out.println();
+        Collections.sort(array2, Collections.reverseOrder());
+        System.out.println("--------------------------------");
+        System.out.println("---Lista ordenada descendente---");
+        for(Integer num : array2){
+            System.out.print(num+"\t");
+        }
+        System.out.println();
+        System.out.println("--------------------------------");
+    }
 
 }

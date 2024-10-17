@@ -38,14 +38,17 @@ public class Main {
                             case 4:
                                 System.out.println("-------------------------------------");
                                 System.out.println("Ejercicio 4:");
+                                Funciones.ejercicio4();
                                 break;
                             case 5:
                                 System.out.println("-------------------------------------");
                                 System.out.println("Ejercicio 5:");
+                                Funciones.CrearArrayEjercicio5(Funciones.CargaEjercicio5());
                                 break;
                             case 6:
                                 System.out.println("-------------------------------------");
-                                System.out.println("Ejercicio 5:");
+                                System.out.println("Ejercicio 6:");
+                                //FALTA HACER!!
                                 break;
                             case 7:
                                 System.out.println("-------------------------------------");
